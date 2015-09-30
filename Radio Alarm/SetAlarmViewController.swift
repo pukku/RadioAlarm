@@ -8,8 +8,15 @@
 
 import UIKit
 
-class SetAlarmViewController: UIViewController {
+class SetAlarmViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    // MARK: Properties
+    
+    @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var stationPicker: UIPickerView!
+    
+    // MARK: UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +27,17 @@ class SetAlarmViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: UIPickerViewDataSource
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1;
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 1;
+    }
+    
+    // MARK: UIPickerViewDelegate
 
 }
 

@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Stations-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Stations" id="9pv-A4-QxB" customClass="StationsViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StationsController" title="Stations" id="9pv-A4-QxB" customClass="StationsViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -16,29 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="157.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="194.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="je3-I6-hLn">
+                                <rect key="frame" x="20" y="28" width="560" height="515"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="F3d-n8-7xY"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Zf6-fg-2TW"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="je3-I6-hLn" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="fx4-Do-KGq"/>
+                            <constraint firstItem="je3-I6-hLn" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="lh9-9f-bYE"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="je3-I6-hLn" secondAttribute="bottom" constant="8" id="pn1-2Z-NcA"/>
+                            <constraint firstItem="je3-I6-hLn" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="tKp-4S-c4B"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stations" image="stations" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="tableView" destination="je3-I6-hLn" id="UjZ-me-D5n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,7 +46,7 @@
         <!--Set Alarm-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController title="Set Alarm" id="8rJ-Kc-sve" customClass="SetAlarmViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetAlarmController" title="Set Alarm" id="8rJ-Kc-sve" customClass="SetAlarmViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -56,29 +55,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="233" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="IKC-7W-rlK">
+                                <rect key="frame" x="20" y="28" width="560" height="233"/>
+                                <date key="date" timeIntervalSinceReferenceDate="465344218.63226599">
+                                    <!--2015-09-30 22:16:58 +0000-->
+                                </date>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="216" translatesAutoresizingMaskIntoConstraints="NO" id="PTe-TT-iAi">
+                                <rect key="frame" x="20" y="269" width="560" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="MEy-Vt-hit"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="skr-6Z-SEb"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSU-7C-uCH">
+                                <rect key="frame" x="285" y="493" width="30" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="41W-ZU-Psm"/>
+                                </constraints>
+                                <state key="normal" title="Go!"/>
+                                <connections>
+                                    <segue destination="9xG-7C-YYa" kind="presentation" id="g01-y1-b3F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="cSU-7C-uCH" secondAttribute="bottom" constant="8" id="6Ik-gV-Khc"/>
+                            <constraint firstItem="IKC-7W-rlK" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="FhU-G1-Nka"/>
+                            <constraint firstItem="IKC-7W-rlK" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="MGr-ox-ypy"/>
+                            <constraint firstItem="PTe-TT-iAi" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="Sev-0X-kZC"/>
+                            <constraint firstItem="IKC-7W-rlK" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="WcL-m0-woZ"/>
+                            <constraint firstItem="cSU-7C-uCH" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="c3v-OK-4Qx"/>
+                            <constraint firstItem="PTe-TT-iAi" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ef1-oG-2pe"/>
+                            <constraint firstItem="cSU-7C-uCH" firstAttribute="top" secondItem="PTe-TT-iAi" secondAttribute="bottom" constant="8" id="gjx-K1-yYN"/>
+                            <constraint firstItem="PTe-TT-iAi" firstAttribute="top" secondItem="IKC-7W-rlK" secondAttribute="bottom" constant="8" id="y0U-UW-6G7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Set Alarm" image="alarm" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="stationPicker" destination="PTe-TT-iAi" id="ech-1V-8VT"/>
+                        <outlet property="timePicker" destination="IKC-7W-rlK" id="w2a-qc-eZd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,7 +105,7 @@
         <!--Alarm-->
         <scene sceneID="2yL-aF-04d">
             <objects>
-                <viewController title="Alarm" id="9xG-7C-YYa" customClass="AlarmViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmController" title="Alarm" id="9xG-7C-YYa" customClass="AlarmViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gXZ-z1-2QU"/>
                         <viewControllerLayoutGuide type="bottom" id="Ias-Aj-y39"/>
@@ -95,7 +113,21 @@
                     <view key="view" contentMode="scaleToFill" id="WJh-Yu-nAR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing, right now." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lc-yl-g6K">
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0lc-yl-g6K" firstAttribute="leading" secondItem="WJh-Yu-nAR" secondAttribute="leadingMargin" id="dJ8-cl-Awh"/>
+                            <constraint firstItem="0lc-yl-g6K" firstAttribute="top" secondItem="gXZ-z1-2QU" secondAttribute="bottom" id="owC-fs-owK"/>
+                            <constraint firstItem="Ias-Aj-y39" firstAttribute="top" secondItem="0lc-yl-g6K" secondAttribute="bottom" id="qPK-FC-Ew9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0lc-yl-g6K" secondAttribute="trailing" id="wWw-XQ-oMd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkj-Xv-fui" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,7 +137,7 @@
         <!--Other-->
         <scene sceneID="ieX-pt-dbs">
             <objects>
-                <viewController title="Other" id="uPc-lq-RM3" customClass="OtherViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OtherController" title="Other" id="uPc-lq-RM3" customClass="OtherViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tz6-4h-I4v"/>
                         <viewControllerLayoutGuide type="bottom" id="0t9-nO-sD9"/>
@@ -113,9 +145,35 @@
                     <view key="view" contentMode="scaleToFill" id="maQ-gf-ITe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quit this app. Apple highly recommends you don't do this." lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgx-u5-jUm">
+                                <rect key="frame" x="20" y="28" width="502" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xp0-2a-WQc">
+                                <rect key="frame" x="530" y="28" width="50" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="F25-Sk-NoY"/>
+                                </constraints>
+                                <state key="normal" image="quit"/>
+                                <connections>
+                                    <action selector="quitPressed:" destination="uPc-lq-RM3" eventType="touchUpInside" id="ZWq-2G-YTc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xp0-2a-WQc" firstAttribute="leading" secondItem="zgx-u5-jUm" secondAttribute="trailing" constant="8" id="Moh-O5-hNH"/>
+                            <constraint firstItem="zgx-u5-jUm" firstAttribute="top" secondItem="tz6-4h-I4v" secondAttribute="bottom" constant="8" id="Seh-ql-4sS"/>
+                            <constraint firstItem="xp0-2a-WQc" firstAttribute="trailing" secondItem="maQ-gf-ITe" secondAttribute="trailingMargin" id="cEt-5M-82y"/>
+                            <constraint firstItem="xp0-2a-WQc" firstAttribute="top" secondItem="tz6-4h-I4v" secondAttribute="bottom" constant="8" id="dia-M1-idS"/>
+                            <constraint firstItem="zgx-u5-jUm" firstAttribute="leading" secondItem="maQ-gf-ITe" secondAttribute="leadingMargin" id="idW-j9-rcL"/>
+                            <constraint firstItem="xp0-2a-WQc" firstAttribute="height" secondItem="zgx-u5-jUm" secondAttribute="height" id="sXU-tr-8PB"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Other" image="utility" id="ZLr-QG-jG8"/>
+                    <tabBarItem key="tabBarItem" title="Other" image="other" id="ZLr-QG-jG8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xK0-rU-2Ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,7 +182,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -144,7 +202,8 @@
     </scenes>
     <resources>
         <image name="alarm" width="26" height="24"/>
+        <image name="other" width="28" height="28"/>
+        <image name="quit" width="22" height="22"/>
         <image name="stations" width="28" height="29"/>
-        <image name="utility" width="28" height="28"/>
     </resources>
 </document>
