@@ -96,14 +96,14 @@
 		E13F82FA1BB72BA50008025D /* Radio Alarm */ = {
 			isa = PBXGroup;
 			children = (
-				E1CC38AD1BBB847700236052 /* silences */,
 				E13F82FB1BB72BA50008025D /* AppDelegate.swift */,
 				E13F82FD1BB72BA50008025D /* FirstViewController.swift */,
 				E13F82FF1BB72BA50008025D /* SecondViewController.swift */,
 				E13F83011BB72BA50008025D /* Main.storyboard */,
-				E13F83041BB72BA50008025D /* Assets.xcassets */,
 				E13F83061BB72BA50008025D /* LaunchScreen.storyboard */,
 				E13F83091BB72BA50008025D /* Info.plist */,
+				E13F83041BB72BA50008025D /* Assets.xcassets */,
+				E1CC38AD1BBB847700236052 /* silences */,
 			);
 			path = "Radio Alarm";
 			sourceTree = "<group>";
@@ -156,6 +156,11 @@
 					E13F82F71BB72BA50008025D = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = P3968KN758;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
