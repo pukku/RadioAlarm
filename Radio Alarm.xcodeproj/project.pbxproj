@@ -14,6 +14,12 @@
 		E13F83051BB72BA50008025D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13F83041BB72BA50008025D /* Assets.xcassets */; };
 		E13F83081BB72BA50008025D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13F83061BB72BA50008025D /* LaunchScreen.storyboard */; };
 		E1CC38AC1BBB7AB500236052 /* Pods_Radio_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CC38AB1BBB7AB500236052 /* Pods_Radio_Alarm.framework */; };
+		E1CC38B41BBB849400236052 /* 1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38AE1BBB849400236052 /* 1.aiff */; settings = {ASSET_TAGS = (); }; };
+		E1CC38B51BBB849400236052 /* 5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38AF1BBB849400236052 /* 5.aiff */; settings = {ASSET_TAGS = (); }; };
+		E1CC38B61BBB849400236052 /* 15.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38B01BBB849400236052 /* 15.aiff */; settings = {ASSET_TAGS = (); }; };
+		E1CC38B71BBB849400236052 /* 30.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38B11BBB849400236052 /* 30.aiff */; settings = {ASSET_TAGS = (); }; };
+		E1CC38B81BBB849400236052 /* 60.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38B21BBB849400236052 /* 60.aiff */; settings = {ASSET_TAGS = (); }; };
+		E1CC38B91BBB849400236052 /* 120.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38B31BBB849400236052 /* 120.aiff */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		E13F83091BB72BA50008025D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CC38A91BBB7A8B00236052 /* KDEAudioPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KDEAudioPlayer.framework; path = "Pods/../build/Debug-iphoneos/KDEAudioPlayer.framework"; sourceTree = "<group>"; };
 		E1CC38AB1BBB7AB500236052 /* Pods_Radio_Alarm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Radio_Alarm.framework; path = "Pods/../build/Debug-iphoneos/Pods_Radio_Alarm.framework"; sourceTree = "<group>"; };
+		E1CC38AE1BBB849400236052 /* 1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 1.aiff; sourceTree = "<group>"; };
+		E1CC38AF1BBB849400236052 /* 5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 5.aiff; sourceTree = "<group>"; };
+		E1CC38B01BBB849400236052 /* 15.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 15.aiff; sourceTree = "<group>"; };
+		E1CC38B11BBB849400236052 /* 30.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 30.aiff; sourceTree = "<group>"; };
+		E1CC38B21BBB849400236052 /* 60.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 60.aiff; sourceTree = "<group>"; };
+		E1CC38B31BBB849400236052 /* 120.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 120.aiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,7 @@
 		E13F82FA1BB72BA50008025D /* Radio Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				E1CC38AD1BBB847700236052 /* silences */,
 				E13F82FB1BB72BA50008025D /* AppDelegate.swift */,
 				E13F82FD1BB72BA50008025D /* FirstViewController.swift */,
 				E13F82FF1BB72BA50008025D /* SecondViewController.swift */,
@@ -93,6 +106,19 @@
 				E13F83091BB72BA50008025D /* Info.plist */,
 			);
 			path = "Radio Alarm";
+			sourceTree = "<group>";
+		};
+		E1CC38AD1BBB847700236052 /* silences */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC38AE1BBB849400236052 /* 1.aiff */,
+				E1CC38AF1BBB849400236052 /* 5.aiff */,
+				E1CC38B01BBB849400236052 /* 15.aiff */,
+				E1CC38B11BBB849400236052 /* 30.aiff */,
+				E1CC38B21BBB849400236052 /* 60.aiff */,
+				E1CC38B31BBB849400236052 /* 120.aiff */,
+			);
+			name = silences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +182,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CC38B51BBB849400236052 /* 5.aiff in Resources */,
+				E1CC38B81BBB849400236052 /* 60.aiff in Resources */,
 				E13F83081BB72BA50008025D /* LaunchScreen.storyboard in Resources */,
 				E13F83051BB72BA50008025D /* Assets.xcassets in Resources */,
+				E1CC38B61BBB849400236052 /* 15.aiff in Resources */,
 				E13F83031BB72BA50008025D /* Main.storyboard in Resources */,
+				E1CC38B91BBB849400236052 /* 120.aiff in Resources */,
+				E1CC38B71BBB849400236052 /* 30.aiff in Resources */,
+				E1CC38B41BBB849400236052 /* 1.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
