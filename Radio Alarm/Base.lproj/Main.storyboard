@@ -7,7 +7,7 @@
         <!--Stations-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Stations" id="9pv-A4-QxB" customClass="StationsViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="749" y="-796"/>
         </scene>
-        <!--Alarm-->
+        <!--Set Alarm-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Set Alarm" id="8rJ-Kc-sve" customClass="SetAlarmViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -78,16 +78,34 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Set Alarm" image="alarm" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749" y="0.0"/>
         </scene>
+        <!--Alarm-->
+        <scene sceneID="2yL-aF-04d">
+            <objects>
+                <viewController title="Alarm" id="9xG-7C-YYa" customClass="AlarmViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gXZ-z1-2QU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ias-Aj-y39"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WJh-Yu-nAR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkj-Xv-fui" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1537" y="0.0"/>
+        </scene>
         <!--Other-->
         <scene sceneID="ieX-pt-dbs">
             <objects>
-                <viewController id="uPc-lq-RM3" sceneMemberID="viewController">
+                <viewController title="Other" id="uPc-lq-RM3" customClass="OtherViewController" customModule="Radio_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tz6-4h-I4v"/>
                         <viewControllerLayoutGuide type="bottom" id="0t9-nO-sD9"/>

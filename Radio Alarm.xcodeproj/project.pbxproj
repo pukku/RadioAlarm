@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E13F82FC1BB72BA50008025D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F82FB1BB72BA50008025D /* AppDelegate.swift */; };
-		E13F82FE1BB72BA50008025D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F82FD1BB72BA50008025D /* FirstViewController.swift */; };
-		E13F83001BB72BA50008025D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F82FF1BB72BA50008025D /* SecondViewController.swift */; };
+		E13F82FE1BB72BA50008025D /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F82FD1BB72BA50008025D /* StationsViewController.swift */; };
+		E13F83001BB72BA50008025D /* SetAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F82FF1BB72BA50008025D /* SetAlarmViewController.swift */; };
 		E13F83031BB72BA50008025D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13F83011BB72BA50008025D /* Main.storyboard */; };
 		E13F83051BB72BA50008025D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13F83041BB72BA50008025D /* Assets.xcassets */; };
 		E13F83081BB72BA50008025D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13F83061BB72BA50008025D /* LaunchScreen.storyboard */; };
@@ -20,6 +20,8 @@
 		E1CC38B71BBB849400236052 /* 30.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38B11BBB849400236052 /* 30.aiff */; settings = {ASSET_TAGS = (); }; };
 		E1CC38B81BBB849400236052 /* 60.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38B21BBB849400236052 /* 60.aiff */; settings = {ASSET_TAGS = (); }; };
 		E1CC38B91BBB849400236052 /* 120.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38B31BBB849400236052 /* 120.aiff */; settings = {ASSET_TAGS = (); }; };
+		E1CC38BB1BBC936000236052 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38BA1BBC936000236052 /* OtherViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E1CC38BD1BBC938600236052 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38BC1BBC938600236052 /* AlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,8 @@
 		ACE55E0CC5DA8306112D7E3B /* Pods_Radio_Alarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Radio_Alarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13F82F81BB72BA50008025D /* Radio Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Radio Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13F82FB1BB72BA50008025D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E13F82FD1BB72BA50008025D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		E13F82FF1BB72BA50008025D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E13F82FD1BB72BA50008025D /* StationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
+		E13F82FF1BB72BA50008025D /* SetAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmViewController.swift; sourceTree = "<group>"; };
 		E13F83021BB72BA50008025D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E13F83041BB72BA50008025D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13F83071BB72BA50008025D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +44,8 @@
 		E1CC38B11BBB849400236052 /* 30.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 30.aiff; sourceTree = "<group>"; };
 		E1CC38B21BBB849400236052 /* 60.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 60.aiff; sourceTree = "<group>"; };
 		E1CC38B31BBB849400236052 /* 120.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 120.aiff; sourceTree = "<group>"; };
+		E1CC38BA1BBC936000236052 /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		E1CC38BC1BBC938600236052 /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				E13F82FB1BB72BA50008025D /* AppDelegate.swift */,
-				E13F82FD1BB72BA50008025D /* FirstViewController.swift */,
-				E13F82FF1BB72BA50008025D /* SecondViewController.swift */,
+				E13F82FD1BB72BA50008025D /* StationsViewController.swift */,
+				E13F82FF1BB72BA50008025D /* SetAlarmViewController.swift */,
 				E13F83011BB72BA50008025D /* Main.storyboard */,
+				E1CC38BC1BBC938600236052 /* AlarmViewController.swift */,
+				E1CC38BA1BBC936000236052 /* OtherViewController.swift */,
 				E13F83061BB72BA50008025D /* LaunchScreen.storyboard */,
 				E13F83091BB72BA50008025D /* Info.plist */,
 				E13F83041BB72BA50008025D /* Assets.xcassets */,
@@ -254,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E13F83001BB72BA50008025D /* SecondViewController.swift in Sources */,
+				E1CC38BD1BBC938600236052 /* AlarmViewController.swift in Sources */,
+				E13F83001BB72BA50008025D /* SetAlarmViewController.swift in Sources */,
+				E1CC38BB1BBC936000236052 /* OtherViewController.swift in Sources */,
 				E13F82FC1BB72BA50008025D /* AppDelegate.swift in Sources */,
-				E13F82FE1BB72BA50008025D /* FirstViewController.swift in Sources */,
+				E13F82FE1BB72BA50008025D /* StationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
