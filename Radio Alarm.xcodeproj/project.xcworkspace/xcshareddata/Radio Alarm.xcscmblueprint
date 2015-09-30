@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1FC9E12684F9711DE3F203DF872315087CDFA572",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "963EEBB2CFB19B09EB6827602E771ACF76698B9A" : 0,
+    "1FC9E12684F9711DE3F203DF872315087CDFA572" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DCBEC956-1D4B-4746-AEFC-CA9F2F2BAA04",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "963EEBB2CFB19B09EB6827602E771ACF76698B9A" : "Radio%20Alarm\/AudioPlayer\/",
+    "1FC9E12684F9711DE3F203DF872315087CDFA572" : "Radio%20Alarm\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Radio Alarm",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Radio Alarm.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:pukku\/RadioAlarm.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1FC9E12684F9711DE3F203DF872315087CDFA572"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/delannoyk\/AudioPlayer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "963EEBB2CFB19B09EB6827602E771ACF76698B9A"
+    }
+  ]
+}
