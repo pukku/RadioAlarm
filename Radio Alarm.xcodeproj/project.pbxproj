@@ -105,13 +105,13 @@
 			isa = PBXGroup;
 			children = (
 				E13F82FB1BB72BA50008025D /* AppDelegate.swift */,
-				E13F82FD1BB72BA50008025D /* StationsViewController.swift */,
-				E13F82FF1BB72BA50008025D /* SetAlarmViewController.swift */,
-				E13F83011BB72BA50008025D /* Main.storyboard */,
 				E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */,
 				E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */,
+				E13F82FD1BB72BA50008025D /* StationsViewController.swift */,
+				E13F82FF1BB72BA50008025D /* SetAlarmViewController.swift */,
 				E1CC38BC1BBC938600236052 /* AlarmViewController.swift */,
 				E1CC38BA1BBC936000236052 /* OtherViewController.swift */,
+				E13F83011BB72BA50008025D /* Main.storyboard */,
 				E13F83061BB72BA50008025D /* LaunchScreen.storyboard */,
 				E13F83091BB72BA50008025D /* Info.plist */,
 				E13F83041BB72BA50008025D /* Assets.xcassets */,
