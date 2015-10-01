@@ -97,7 +97,7 @@
                                 </constraints>
                                 <state key="normal" title="Go!"/>
                                 <connections>
-                                    <segue destination="9xG-7C-YYa" kind="presentation" id="g01-y1-b3F"/>
+                                    <segue destination="9xG-7C-YYa" kind="presentation" identifier="StartAlarm" id="g01-y1-b3F"/>
                                 </connections>
                             </button>
                         </subviews>
