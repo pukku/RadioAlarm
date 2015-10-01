@@ -19,12 +19,9 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // hide the extra separator lines from extra rows
+        self.tableView.tableFooterView = UIView();
     }
 
     // MARK: UITableViewDataSource
@@ -34,15 +31,19 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
+        return RAP.si.stations_order.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "StationTableViewCell");
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "StationsTableViewCell");
         //let station = globalStations[indexPath.row];
         
-        cell.textLabel!.text = "Test";
-        cell.detailTextLabel!.text = "Bar";
+        let station_name = RAP.si.stations_order[indexPath.row];
+        let station_url = String(RAP.si.stations[station_name]!!.mediumQualityURL.URL);
+        
+        cell.textLabel!.text = station_name;
+        cell.detailTextLabel!.text = station_url;
+        cell.imageView!.image = UIImage(named: "play");
         cell.selectionStyle = .Blue;
         
         return cell;
