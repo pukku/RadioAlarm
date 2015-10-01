@@ -18,24 +18,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="je3-I6-hLn">
-                                <rect key="frame" x="20" y="28" width="560" height="515"/>
+                                <rect key="frame" x="20" y="28" width="560" height="492.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="F3d-n8-7xY"/>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="Zf6-fg-2TW"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stopped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsz-Vq-cf1">
+                                <rect key="frame" x="20" y="528" width="560" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Hsz-Vq-cf1" secondAttribute="bottom" constant="8" id="09o-N0-pg6"/>
+                            <constraint firstItem="Hsz-Vq-cf1" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="1NI-Qk-Fee"/>
+                            <constraint firstItem="Hsz-Vq-cf1" firstAttribute="top" secondItem="je3-I6-hLn" secondAttribute="bottom" constant="8" id="MqP-Us-a8G"/>
+                            <constraint firstItem="Hsz-Vq-cf1" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="RKL-39-TRv"/>
                             <constraint firstItem="je3-I6-hLn" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="fx4-Do-KGq"/>
                             <constraint firstItem="je3-I6-hLn" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="lh9-9f-bYE"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="je3-I6-hLn" secondAttribute="bottom" constant="8" id="pn1-2Z-NcA"/>
                             <constraint firstItem="je3-I6-hLn" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="tKp-4S-c4B"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stations" image="stations" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="statusLabel" destination="Hsz-Vq-cf1" id="UnB-wa-86b"/>
                         <outlet property="tableView" destination="je3-I6-hLn" id="UjZ-me-D5n"/>
                     </connections>
                 </viewController>

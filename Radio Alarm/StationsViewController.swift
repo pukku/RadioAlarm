@@ -6,14 +6,15 @@
 //  Copyright © 2015 Ricky Morse. All rights reserved.
 //
 
-import UIKit
+import UIKit;
+import KDEAudioPlayer;
 
-class StationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class StationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AudioPlayerDelegate {
 
     // MARK: Properties
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var statusLabel: UILabel!
     
     // MARK: UIViewController
     
@@ -34,6 +35,11 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
         return RAP.si.stations_order.count;
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        // we know there's only one section:
+        return "Stations";
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "StationsTableViewCell");
         //let station = globalStations[indexPath.row];
@@ -51,6 +57,38 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: UITableViewDelegate
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let station_name = RAP.si.stations_order[indexPath.row];
+        let cell = tableView.cellForRowAtIndexPath(indexPath);
+        
+        if station_name == RAP.si.current {
+            // if the station is currently playing, stop it.
+            cell?.imageView!.image = UIImage(named: "play");
+            tableView.deselectRowAtIndexPath(indexPath, animated: false);
+
+            RAP.si.stop();
+            RAP.si.player.delegate = nil;
+            statusLabel.text = "Stopped";
+        }
+        else {
+            // else, start it
+            cell?.imageView!.image = UIImage(named: "stop");
+
+            RAP.si.stop();
+            RAP.si.player.delegate = self;
+            RAP.si.playStation(station_name);
+        }
+    }
+    
+    // MARK: AudioPlayerDelegate
+    
+    func audioPlayer(audioPlayer: AudioPlayer, willStartPlayingItem item: AudioItem) {
+        statusLabel.text = "Playing \(item.mediumQualityURL.URL)";
+    }
+
+    func audioPlayer(audioPlayer: AudioPlayer, didChangeStateFrom from: AudioPlayerState, toState to: AudioPlayerState) {}
+    func audioPlayer(audioPlayer: AudioPlayer, didFindDuration duration: NSTimeInterval, forItem item: AudioItem) {}
+    func audioPlayer(audioPlayer: AudioPlayer, didUpdateProgressionToTime time: NSTimeInterval, percentageRead: Float) {}
 
 }
 
