@@ -34,10 +34,15 @@ class SetAlarmViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1;
+        return RAP.si.stations.count;
     }
     
     // MARK: UIPickerViewDelegate
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        // there is only one component, so we ignore that
+        return RAP.si.stations_order[row];
+    }
 
 }
 
