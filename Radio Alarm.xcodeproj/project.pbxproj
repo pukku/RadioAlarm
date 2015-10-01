@@ -22,6 +22,8 @@
 		E1CC38B91BBB849400236052 /* 120.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC38B31BBB849400236052 /* 120.aiff */; settings = {ASSET_TAGS = (); }; };
 		E1CC38BB1BBC936000236052 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38BA1BBC936000236052 /* OtherViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E1CC38BD1BBC938600236052 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38BC1BBC938600236052 /* AlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E1CC38BF1BBCA8B400236052 /* KDEAudioPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		E1CC38C11BBCAA0600236052 /* RadioAlarmPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		E1CC38B31BBB849400236052 /* 120.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = 120.aiff; sourceTree = "<group>"; };
 		E1CC38BA1BBC936000236052 /* OtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		E1CC38BC1BBC938600236052 /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDEAudioPlayerExtension.swift; sourceTree = "<group>"; };
+		E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioAlarmPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				E13F82FD1BB72BA50008025D /* StationsViewController.swift */,
 				E13F82FF1BB72BA50008025D /* SetAlarmViewController.swift */,
 				E13F83011BB72BA50008025D /* Main.storyboard */,
+				E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */,
+				E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */,
 				E1CC38BC1BBC938600236052 /* AlarmViewController.swift */,
 				E1CC38BA1BBC936000236052 /* OtherViewController.swift */,
 				E13F83061BB72BA50008025D /* LaunchScreen.storyboard */,
@@ -261,7 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1CC38BD1BBC938600236052 /* AlarmViewController.swift in Sources */,
+				E1CC38C11BBCAA0600236052 /* RadioAlarmPlayer.swift in Sources */,
 				E13F83001BB72BA50008025D /* SetAlarmViewController.swift in Sources */,
+				E1CC38BF1BBCA8B400236052 /* KDEAudioPlayerExtension.swift in Sources */,
 				E1CC38BB1BBC936000236052 /* OtherViewController.swift in Sources */,
 				E13F82FC1BB72BA50008025D /* AppDelegate.swift in Sources */,
 				E13F82FE1BB72BA50008025D /* StationsViewController.swift in Sources */,
