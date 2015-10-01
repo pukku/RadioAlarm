@@ -50,6 +50,7 @@
 		E1CC38BC1BBC938600236052 /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDEAudioPlayerExtension.swift; sourceTree = "<group>"; };
 		E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioAlarmPlayer.swift; sourceTree = "<group>"; };
+		E1CC38C21BBD5C7E00236052 /* mksilence.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = mksilence.pl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +124,7 @@
 		E1CC38AD1BBB847700236052 /* silences */ = {
 			isa = PBXGroup;
 			children = (
+				E1CC38C21BBD5C7E00236052 /* mksilence.pl */,
 				E1CC38AE1BBB849400236052 /* 1.aiff */,
 				E1CC38AF1BBB849400236052 /* 5.aiff */,
 				E1CC38B01BBB849400236052 /* 15.aiff */,
