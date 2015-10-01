@@ -65,14 +65,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="233" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="IKC-7W-rlK">
-                                <rect key="frame" x="20" y="28" width="560" height="233"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOR-Nr-CFX">
+                                <rect key="frame" x="20" y="28" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="204" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="IKC-7W-rlK">
+                                <rect key="frame" x="20" y="57" width="560" height="204"/>
                                 <date key="date" timeIntervalSinceReferenceDate="465344218.63226599">
                                     <!--2015-09-30 22:16:58 +0000-->
                                 </date>
                             </datePicker>
-                            <pickerView contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="216" translatesAutoresizingMaskIntoConstraints="NO" id="PTe-TT-iAi">
-                                <rect key="frame" x="20" y="269" width="560" height="216"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listening to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmN-IO-sDq">
+                                <rect key="frame" x="20" y="269" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="187" translatesAutoresizingMaskIntoConstraints="NO" id="PTe-TT-iAi">
+                                <rect key="frame" x="20" y="298" width="560" height="187"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rJ-Kc-sve" id="MEy-Vt-hit"/>
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="skr-6Z-SEb"/>
@@ -91,15 +103,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PTe-TT-iAi" firstAttribute="top" secondItem="pmN-IO-sDq" secondAttribute="bottom" constant="8" id="4l3-n6-OtO"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="cSU-7C-uCH" secondAttribute="bottom" constant="8" id="6Ik-gV-Khc"/>
-                            <constraint firstItem="IKC-7W-rlK" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="FhU-G1-Nka"/>
                             <constraint firstItem="IKC-7W-rlK" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="MGr-ox-ypy"/>
+                            <constraint firstItem="IKC-7W-rlK" firstAttribute="top" secondItem="DOR-Nr-CFX" secondAttribute="bottom" constant="8" id="RP5-rX-H46"/>
                             <constraint firstItem="PTe-TT-iAi" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="Sev-0X-kZC"/>
-                            <constraint firstItem="IKC-7W-rlK" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="WcL-m0-woZ"/>
+                            <constraint firstItem="DOR-Nr-CFX" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="TUf-Ib-dAC"/>
+                            <constraint firstItem="IKC-7W-rlK" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ZAV-zW-Ew9"/>
                             <constraint firstItem="cSU-7C-uCH" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="c3v-OK-4Qx"/>
+                            <constraint firstItem="pmN-IO-sDq" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="dyP-Vf-dp6"/>
+                            <constraint firstItem="DOR-Nr-CFX" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="eGb-by-PgB"/>
                             <constraint firstItem="PTe-TT-iAi" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ef1-oG-2pe"/>
+                            <constraint firstItem="pmN-IO-sDq" firstAttribute="top" secondItem="IKC-7W-rlK" secondAttribute="bottom" constant="8" id="fm0-M4-3wP"/>
                             <constraint firstItem="cSU-7C-uCH" firstAttribute="top" secondItem="PTe-TT-iAi" secondAttribute="bottom" constant="8" id="gjx-K1-yYN"/>
-                            <constraint firstItem="PTe-TT-iAi" firstAttribute="top" secondItem="IKC-7W-rlK" secondAttribute="bottom" constant="8" id="y0U-UW-6G7"/>
+                            <constraint firstItem="pmN-IO-sDq" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="o18-Ht-CoS"/>
+                            <constraint firstItem="DOR-Nr-CFX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="t0Z-eO-gWi"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Set Alarm" image="alarm" id="cPa-gy-q4n"/>
