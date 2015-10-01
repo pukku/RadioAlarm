@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  SetAlarmViewController.swift
 //  Radio Alarm
 //
 //  Created by Ricky Morse on 9/26/15.
