@@ -30,13 +30,19 @@ class RAP {
     ];
     
     let player = AudioPlayer();
-    var delegate : AudioPlayerDelegate?;
+    var current: String?;
     
     func playStation(station: String) {
         player.stop(); // also clears the queue
         if let s = stations[station]! {
             player.playItem(s);
+            current = station;
         }
+    }
+    
+    func stop() {
+        player.stop();
+        current = nil;
     }
     
     func playSilenceForMinutes(min: Int, thenStation: String) {
