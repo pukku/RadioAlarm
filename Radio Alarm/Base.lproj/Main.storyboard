@@ -93,11 +93,15 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSU-7C-uCH">
-                                <rect key="frame" x="285" y="493" width="30" height="50"/>
+                                <rect key="frame" x="20" y="493" width="560" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="41W-ZU-Psm"/>
                                 </constraints>
-                                <state key="normal" title="Go!"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                <state key="normal" title="Go!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="9xG-7C-YYa" kind="presentation" identifier="StartAlarm" id="g01-y1-b3F"/>
                                 </connections>
@@ -112,11 +116,12 @@
                             <constraint firstItem="PTe-TT-iAi" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="Sev-0X-kZC"/>
                             <constraint firstItem="DOR-Nr-CFX" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="TUf-Ib-dAC"/>
                             <constraint firstItem="IKC-7W-rlK" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ZAV-zW-Ew9"/>
-                            <constraint firstItem="cSU-7C-uCH" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="c3v-OK-4Qx"/>
+                            <constraint firstItem="cSU-7C-uCH" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ZQb-IO-GxE"/>
                             <constraint firstItem="pmN-IO-sDq" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="dyP-Vf-dp6"/>
                             <constraint firstItem="DOR-Nr-CFX" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="eGb-by-PgB"/>
                             <constraint firstItem="PTe-TT-iAi" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ef1-oG-2pe"/>
                             <constraint firstItem="pmN-IO-sDq" firstAttribute="top" secondItem="IKC-7W-rlK" secondAttribute="bottom" constant="8" id="fm0-M4-3wP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cSU-7C-uCH" secondAttribute="trailing" id="gB0-lK-gQ2"/>
                             <constraint firstItem="cSU-7C-uCH" firstAttribute="top" secondItem="PTe-TT-iAi" secondAttribute="bottom" constant="8" id="gjx-K1-yYN"/>
                             <constraint firstItem="pmN-IO-sDq" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="o18-Ht-CoS"/>
                             <constraint firstItem="DOR-Nr-CFX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="t0Z-eO-gWi"/>
@@ -218,6 +223,7 @@
                                 <state key="normal" title="Stop"/>
                                 <connections>
                                     <action selector="stopPressed:" destination="9xG-7C-YYa" eventType="touchUpInside" id="bXi-uj-1th"/>
+                                    <segue destination="zba-Hj-gqh" kind="unwind" unwindAction="unwindFromAlarm:" id="kP4-0Z-jRW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -255,6 +261,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkj-Xv-fui" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zba-Hj-gqh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1529" y="0.0"/>
         </scene>

@@ -9,6 +9,13 @@
 import Foundation;
 import KDEAudioPlayer;
 
+let kONE_DAY : NSTimeInterval = 60 * 60 * 24; // secs * mins * hours
+
+struct RadioAlarmSettings {
+    var date: NSDate;
+    var station: String;
+}
+
 class RAP {
     static let si : RAP = RAP();
     
