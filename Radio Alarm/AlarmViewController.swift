@@ -6,7 +6,8 @@
 //  Copyright © 2015 Ricky Morse. All rights reserved.
 //
 
-import UIKit
+import UIKit;
+import AVFoundation;
 
 class AlarmViewController: UIViewController {
     
@@ -27,6 +28,13 @@ class AlarmViewController: UIViewController {
         if (alarmSettings != nil) {
             timeLabel.text = NSDateFormatter.localizedStringFromDate(alarmSettings!.date, dateStyle: .NoStyle, timeStyle: .ShortStyle);
             stationLabel.text = alarmSettings!.station;
+            
+            // power managing
+            UIDevice.currentDevice().batteryMonitoringEnabled = true;
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "batteryChanged:", name:UIDeviceBatteryLevelDidChangeNotification, object: nil);
+            
+            let vol = AVAudioSession.sharedInstance().outputVolume;
+            print("\(vol)");
         }
     }
 
@@ -34,6 +42,12 @@ class AlarmViewController: UIViewController {
     
     @IBAction func stopPressed(sender: UIButton) {
         print("stop!");
+    }
+    
+    // MARK: Notification center
+    
+    func batteryChanged(notification: NSNotification) {
+        print("\(notification)");
     }
 
 }
