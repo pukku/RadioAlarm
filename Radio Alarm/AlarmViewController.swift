@@ -9,7 +9,17 @@
 import UIKit
 
 class AlarmViewController: UIViewController {
+    
+    // MARK: Properties
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var stationLabel: UILabel!
+    @IBOutlet weak var powerView: UIView!
+    @IBOutlet weak var volumeView: UIView!
+    
 
+    // MARK: UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +31,10 @@ class AlarmViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Actions
+    
+    @IBAction func stopPressed(sender: UIButton) {
+    }
 
     /*
     // MARK: - Navigation
