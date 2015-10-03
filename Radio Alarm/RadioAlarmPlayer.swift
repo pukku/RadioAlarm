@@ -20,20 +20,20 @@ class RAP {
     static let si : RAP = RAP();
     
     let stations = [
-        "WERS" : AudioItem(string:"http://www.wers.org/wers.pls"),
-        "Classical New England" : AudioItem(string: "http://audio.wgbh.org/otherWaysToListen/classicalNewEngland.m3u"),
+        "WERS" : NamedAudioItem(name: "WERS", string:"http://www.wers.org/wers.pls"),
+        "Classical New England" : NamedAudioItem(name: "Classical New England", string: "http://audio.wgbh.org/otherWaysToListen/classicalNewEngland.m3u"),
     ];
     var stations_order: [String] {
         return [String](stations.keys.sort());
     };
     
     let silences = [
-        1: NSBundle.mainBundle().URLForResource("1", withExtension: "aiff"),
-        5: NSBundle.mainBundle().URLForResource("5", withExtension: "aiff"),
-        15: NSBundle.mainBundle().URLForResource("15", withExtension: "aiff"),
-        30: NSBundle.mainBundle().URLForResource("30", withExtension: "aiff"),
-        60: NSBundle.mainBundle().URLForResource("60", withExtension: "aiff"),
-        120: NSBundle.mainBundle().URLForResource("120", withExtension: "aiff"),
+        1: NamedAudioItem(name: "1 minute", url: NSBundle.mainBundle().URLForResource("1", withExtension: "aiff")),
+        5: NamedAudioItem(name: "5 minutes", url: NSBundle.mainBundle().URLForResource("5", withExtension: "aiff")),
+        15: NamedAudioItem(name: "15 minutes", url: NSBundle.mainBundle().URLForResource("15", withExtension: "aiff")),
+        30: NamedAudioItem(name: "30 minutes", url: NSBundle.mainBundle().URLForResource("30", withExtension: "aiff")),
+        60: NamedAudioItem(name: "1 hour", url: NSBundle.mainBundle().URLForResource("60", withExtension: "aiff")),
+        120: NamedAudioItem(name: "2 hours", url: NSBundle.mainBundle().URLForResource("120", withExtension: "aiff")),
     ];
     
     let player = AudioPlayer();

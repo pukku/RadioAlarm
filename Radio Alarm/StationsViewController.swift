@@ -63,30 +63,39 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if station_name == RAP.si.current {
             // if the station is currently playing, stop it.
-            cell?.imageView!.image = UIImage(named: "play");
-            tableView.deselectRowAtIndexPath(indexPath, animated: false);
-
             RAP.si.stop();
             RAP.si.player.delegate = nil;
-            statusLabel.text = "Stopped";
+            
+            cell?.imageView!.image = UIImage(named: "play");
+            tableView.deselectRowAtIndexPath(indexPath, animated: false);
         }
         else {
             // else, start it
-            cell?.imageView!.image = UIImage(named: "stop");
-
             RAP.si.stop();
             RAP.si.player.delegate = self;
             RAP.si.playStation(station_name);
+            
+            cell?.imageView!.image = UIImage(named: "stop");
         }
     }
     
     // MARK: AudioPlayerDelegate
     
     func audioPlayer(audioPlayer: AudioPlayer, willStartPlayingItem item: AudioItem) {
-        statusLabel.text = "Playing \(item.mediumQualityURL.URL)";
+        //statusLabel.text = "Playing \(item.mediumQualityURL.URL)";
     }
-
-    func audioPlayer(audioPlayer: AudioPlayer, didChangeStateFrom from: AudioPlayerState, toState to: AudioPlayerState) {}
+    
+    func audioPlayer(audioPlayer: AudioPlayer, didChangeStateFrom from: AudioPlayerState, toState to: AudioPlayerState) {
+        if to == .Stopped {
+            statusLabel.text = "\(to)";
+        }
+        else if let currItem = audioPlayer.currentItem as? NamedAudioItem {
+            statusLabel.text = "\(to): \(currItem.name!)";
+        }
+        else {
+            statusLabel.text = "\(to)";
+        }
+    }
     func audioPlayer(audioPlayer: AudioPlayer, didFindDuration duration: NSTimeInterval, forItem item: AudioItem) {}
     func audioPlayer(audioPlayer: AudioPlayer, didUpdateProgressionToTime time: NSTimeInterval, percentageRead: Float) {}
 
