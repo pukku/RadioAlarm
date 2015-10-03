@@ -81,10 +81,6 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: AudioPlayerDelegate
     
-    func audioPlayer(audioPlayer: AudioPlayer, willStartPlayingItem item: AudioItem) {
-        //statusLabel.text = "Playing \(item.mediumQualityURL.URL)";
-    }
-    
     func audioPlayer(audioPlayer: AudioPlayer, didChangeStateFrom from: AudioPlayerState, toState to: AudioPlayerState) {
         if to == .Stopped {
             statusLabel.text = "\(to)";
@@ -96,6 +92,7 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
             statusLabel.text = "\(to)";
         }
     }
+    func audioPlayer(audioPlayer: AudioPlayer, willStartPlayingItem item: AudioItem) {}
     func audioPlayer(audioPlayer: AudioPlayer, didFindDuration duration: NSTimeInterval, forItem item: AudioItem) {}
     func audioPlayer(audioPlayer: AudioPlayer, didUpdateProgressionToTime time: NSTimeInterval, percentageRead: Float) {}
 
