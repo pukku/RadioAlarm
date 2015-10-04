@@ -15,9 +15,9 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
     // MARK: Properties
     
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var powerImage: UIImageView!
+    @IBOutlet weak var volumeImage: UIImageView!
     @IBOutlet weak var stationLabel: UILabel!
-    @IBOutlet weak var powerView: UIView!
-    @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
     
     var alarmSettings: RadioAlarmSettings?;
@@ -65,10 +65,10 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
     func batteryChanged(notification: NSNotification?) {
         let currBattery = UIDevice.currentDevice().batteryState;
         if (currBattery == .Unplugged) {
-            powerView.backgroundColor = UIColor.redColor();
+            powerImage.backgroundColor = UIColor.redColor();
         }
         else {
-            powerView.backgroundColor = nil;
+            powerImage.backgroundColor = nil;
             UIDevice.currentDevice().batteryMonitoringEnabled = false;
             NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceBatteryLevelDidChangeNotification, object: nil);
         }
@@ -80,10 +80,10 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
             if keyPath == "objectVolume" {
                 let audioSession = AVAudioSession.sharedInstance();
                 if (audioSession.outputVolume != 1.0) {
-                    volumeView.backgroundColor = UIColor.redColor();
+                    volumeImage.backgroundColor = UIColor.redColor();
                 }
                 else {
-                    volumeView.backgroundColor = nil;
+                    volumeImage.backgroundColor = nil;
                     audioSession.removeObserver(self, forKeyPath: "objectVolume");
                 }
             }
