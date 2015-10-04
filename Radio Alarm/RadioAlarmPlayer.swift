@@ -52,7 +52,22 @@ class RAP {
         current = nil;
     }
     
-    func playSilenceForMinutes(min: Int, thenStation: String) {
-        print("Play for \(min) minutes, then station \(thenStation)");
+    func playSilenceForMinutes(min: Int, thenStation station: String) {
+        print("Play for \(min) minutes, then station \(station)");
+        
+        var avail = silences.keys.sort(>);
+        var items = [NamedAudioItem]();
+        var remaining = min;
+        
+        BUILD_SILENCE_ARRAY:
+        while (remaining > 0) {
+            while ((avail.count > 0) && (remaining < avail[0])) { avail.removeFirst(); }
+            if (avail.isEmpty) { break BUILD_SILENCE_ARRAY; }
+            items.append(silences[avail[0]]!!);
+            remaining -= avail[0];
+        }
+        items.append(stations[station]!!);
+        
+        player.playItems(items);
     }
 }
