@@ -16,6 +16,8 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var statusLabel: UILabel!
     
+    var playingRow: NSIndexPath? = nil;
+    
     // MARK: UIViewController
     
     override func viewDidLoad() {
@@ -32,7 +34,7 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return RAP.si.stations_order.count;
+        return RAP.si.stations.count;
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -42,13 +44,10 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "StationsTableViewCell");
-        //let station = globalStations[indexPath.row];
+        let station = RAP.si.stations[indexPath.row]!;
         
-        let station_name = RAP.si.stations_order[indexPath.row];
-        let station_url = String(RAP.si.stations[station_name]!!.mediumQualityURL.URL);
-        
-        cell.textLabel!.text = station_name;
-        cell.detailTextLabel!.text = station_url;
+        cell.textLabel!.text = station.name;
+        cell.detailTextLabel!.text = String(station.mediumQualityURL.URL);
         cell.imageView!.image = UIImage(named: "play");
         cell.selectionStyle = .Blue;
         
@@ -58,24 +57,40 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: UITableViewDelegate
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let station_name = RAP.si.stations_order[indexPath.row];
-        let cell = tableView.cellForRowAtIndexPath(indexPath);
         
-        if station_name == RAP.si.current {
-            // if the station is currently playing, stop it.
+        if (indexPath == playingRow) {
+            // selected the already playing row, so stop it
             RAP.si.stop();
             RAP.si.player.delegate = nil;
             
+            // reset the image and deselect the row
+            let cell = tableView.cellForRowAtIndexPath(indexPath);
             cell?.imageView!.image = UIImage(named: "play");
             tableView.deselectRowAtIndexPath(indexPath, animated: false);
+            
+            // set the playing row to -1
+            self.playingRow = nil;
         }
         else {
-            // else, start it
+            // we're selecting a new row, so stop anything
             RAP.si.stop();
-            RAP.si.player.delegate = self;
-            RAP.si.playStation(station_name);
             
+            // if there was a previously playing row, change its icon
+            if (playingRow != nil) {
+                let prevCell = tableView.cellForRowAtIndexPath(playingRow!);
+                prevCell?.imageView!.image = UIImage(named: "play");
+            }
+            
+            // start the new station
+            RAP.si.player.delegate = self;
+            RAP.si.playStation(indexPath.row);
+            
+            // set the new icon
+            let cell = tableView.cellForRowAtIndexPath(indexPath);
             cell?.imageView!.image = UIImage(named: "stop");
+            
+            // update the playing row
+            playingRow = indexPath;
         }
     }
     

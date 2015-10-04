@@ -31,7 +31,7 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
         
         if (alarmSettings != nil) {
             timeLabel.text = NSDateFormatter.localizedStringFromDate(alarmSettings!.date, dateStyle: .NoStyle, timeStyle: .ShortStyle);
-            stationLabel.text = alarmSettings!.station;
+            stationLabel.text = RAP.si.stations[alarmSettings!.station]!.name;
             
             // power managing
             UIDevice.currentDevice().batteryMonitoringEnabled = true;
@@ -58,6 +58,8 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
     @IBAction func stopPressed(sender: UIButton) {
         RAP.si.stop();
         RAP.si.player.delegate = nil;
+        
+        // @TODO: check to see if still observing anything and stop it
     }
     
     // MARK: Notifications

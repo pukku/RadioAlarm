@@ -19,14 +19,8 @@ class SetAlarmViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "StartAlarm") {
             // determine the date by finding the next positive offset
@@ -42,7 +36,7 @@ class SetAlarmViewController: UIViewController, UIPickerViewDataSource, UIPicker
             }
             
             // get the current station
-            let station = RAP.si.stations_order[stationPicker.selectedRowInComponent(0)];
+            let station = stationPicker.selectedRowInComponent(0);
             
             if let c = segue.destinationViewController as? AlarmViewController {
                 c.alarmSettings = RadioAlarmSettings(date: date, station: station);
@@ -67,7 +61,7 @@ class SetAlarmViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         // there is only one component, so we ignore that
-        return RAP.si.stations_order[row];
+        return RAP.si.stations[row]!.name;
     }
 
 }

@@ -16,10 +16,6 @@ class OtherViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // MARK: Actions
     
     /* This is highly frowned upon by Apple. */
