@@ -19,6 +19,11 @@ class SetAlarmViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // initialize with the previously saved settings
+        let settings = RAP.si.read_alarm_settings();
+        timePicker.date = settings.date;
+        stationPicker.selectRow(settings.station, inComponent: 0, animated: false);
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -61,7 +66,7 @@ class SetAlarmViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         // there is only one component, so we ignore that
-        return RAP.si.stations[row]!.name;
+        return RAP.si.stations[row].name;
     }
 
 }

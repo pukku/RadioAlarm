@@ -30,20 +30,26 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
         super.viewDidLoad()
         
         if (alarmSettings != nil) {
-            timeLabel.text = NSDateFormatter.localizedStringFromDate(alarmSettings!.date, dateStyle: .NoStyle, timeStyle: .ShortStyle);
-            stationLabel.text = RAP.si.stations[alarmSettings!.station]!.name;
+            // save the current settings
+            RAP.si.save_alarm_settings(alarmSettings!);
             
-            // power managing
+            // set the labels appropriately
+            timeLabel.text = NSDateFormatter.localizedStringFromDate(alarmSettings!.date, dateStyle: .NoStyle, timeStyle: .ShortStyle);
+            stationLabel.text = RAP.si.stations[alarmSettings!.station].name;
+            
+            // register for notifications on battery changes
             UIDevice.currentDevice().batteryMonitoringEnabled = true;
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "batteryChanged:", name:UIDeviceBatteryLevelDidChangeNotification, object: nil);
             self.batteryChanged(nil);
             
-            // volume change; we can't use notification center, we need to do "kvo".
+            // observe volume changes; we can't use notification center, we need to do "kvo".
             // why can't they both have the same interface!
             AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: .New, context: volumeObserverContext);
-            
+
+            // set the delegate so we get notifications of what we're playing
             RAP.si.player.delegate = self;
             
+            // start the alarm playing
             let minsToAlarm = Int(alarmSettings!.date.timeIntervalSinceNow / 60); // seconds returned, need mins
             RAP.si.playSilenceForMinutes(minsToAlarm, thenStation: alarmSettings!.station);
         }

@@ -44,7 +44,7 @@ class StationsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "StationsTableViewCell");
-        let station = RAP.si.stations[indexPath.row]!;
+        let station = RAP.si.stations[indexPath.row];
         
         cell.textLabel!.text = station.name;
         cell.detailTextLabel!.text = String(station.mediumQualityURL.URL);
