@@ -51,10 +51,10 @@ class RAP {
         player.stop();
         current = nil;
     }
-    
+
+    /* build an array of silence sounds for the number of minutes specified, then
+       add in a station, and then play */
     func playSilenceForMinutes(min: Int, thenStation station: String) {
-        print("Play for \(min) minutes, then station \(station)");
-        
         var avail = silences.keys.sort(>);
         var items = [NamedAudioItem]();
         var remaining = min;
@@ -68,6 +68,7 @@ class RAP {
         }
         items.append(stations[station]!!);
         
+        player.stop();
         player.playItems(items);
     }
 }
