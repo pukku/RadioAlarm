@@ -102,7 +102,7 @@ class RAP {
         var items = [String: String]();
         
         for station in stations {
-            items[station.name!] = String(station.mediumQualityURL.URL) ?? String(station.highestQualityURL.URL) ?? String(station.lowestQualityURL.URL) ?? "";
+            items[station.name!] = String(station.highestQualityURL.URL) ?? "";
         }
         
         NSUserDefaults.standardUserDefaults().setObject(items, forKey: "stations");
