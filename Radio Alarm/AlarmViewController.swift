@@ -37,15 +37,15 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
             timeLabel.text = NSDateFormatter.localizedStringFromDate(alarmSettings!.date, dateStyle: .NoStyle, timeStyle: .ShortStyle);
             stationLabel.text = RAP.si.stations[alarmSettings!.station].name;
             
-            // register for notifications on battery changes
+            // register for notifications on battery changes and volume changes
             UIDevice.currentDevice().batteryMonitoringEnabled = true;
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "batteryChanged:", name:UIDeviceBatteryLevelDidChangeNotification, object: nil);
-            self.batteryChanged(nil);
-            
-            // observe volume changes; we can't use notification center, we need to do "kvo".
-            // why can't they both have the same interface!
-            AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: .New, context: volumeObserverContext);
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "volumeChanged:", name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil);
 
+            // post an initial notification, so that the background gets set to the right color
+            NSNotificationCenter.defaultCenter().postNotificationName(UIDeviceBatteryLevelDidChangeNotification, object: self);
+            NSNotificationCenter.defaultCenter().postNotificationName("AVSystemController_SystemVolumeDidChangeNotification", object: self);
+            
             // set the delegate so we get notifications of what we're playing
             RAP.si.player.delegate = self;
             
@@ -66,11 +66,13 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
         RAP.si.player.delegate = nil;
         
         // @TODO: check to see if still observing anything and stop it
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceBatteryLevelDidChangeNotification, object: nil);
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil);
     }
     
     // MARK: Notifications
     
-    func batteryChanged(notification: NSNotification?) {
+    func batteryChanged(notification: NSNotification) {
         let currBattery = UIDevice.currentDevice().batteryState;
         if (currBattery == .Unplugged) {
             powerImage.backgroundColor = UIColor.redColor();
@@ -83,21 +85,17 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
         
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if context == volumeObserverContext {
-            if keyPath == "objectVolume" {
-                let audioSession = AVAudioSession.sharedInstance();
-                if (audioSession.outputVolume != 1.0) {
-                    volumeImage.backgroundColor = UIColor.redColor();
-                }
-                else {
-                    volumeImage.backgroundColor = nil;
-                    audioSession.removeObserver(self, forKeyPath: "objectVolume");
-                }
-            }
+    func volumeChanged(notification: NSNotification) {
+        let currVolume = AVAudioSession.sharedInstance().outputVolume;
+        if (currVolume < 1.0) {
+            volumeImage.backgroundColor = UIColor.redColor();
+        }
+        else {
+            volumeImage.backgroundColor = nil;
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil);
         }
     }
-
+    
     // MARK: AudioPlayerDelegate
     
     func audioPlayer(audioPlayer: AudioPlayer, didChangeStateFrom from: AudioPlayerState, toState to: AudioPlayerState) {
