@@ -24,6 +24,7 @@
 		E1CC38BD1BBC938600236052 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38BC1BBC938600236052 /* AlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E1CC38BF1BBCA8B400236052 /* KDEAudioPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		E1CC38C11BBCAA0600236052 /* RadioAlarmPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */; settings = {ASSET_TAGS = (); }; };
+		E1D75F731BC208C7000B98F5 /* initialDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1D75F721BC208C7000B98F5 /* initialDefaults.plist */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDEAudioPlayerExtension.swift; sourceTree = "<group>"; };
 		E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioAlarmPlayer.swift; sourceTree = "<group>"; };
 		E1CC38C21BBD5C7E00236052 /* mksilence.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = mksilence.pl; sourceTree = "<group>"; };
+		E1D75F721BC208C7000B98F5 /* initialDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = initialDefaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E13F82FB1BB72BA50008025D /* AppDelegate.swift */,
+				E1D75F721BC208C7000B98F5 /* initialDefaults.plist */,
 				E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */,
 				E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */,
 				E13F82FD1BB72BA50008025D /* StationsViewController.swift */,
@@ -204,6 +207,7 @@
 				E1CC38B51BBB849400236052 /* 5.aiff in Resources */,
 				E1CC38B81BBB849400236052 /* 60.aiff in Resources */,
 				E13F83081BB72BA50008025D /* LaunchScreen.storyboard in Resources */,
+				E1D75F731BC208C7000B98F5 /* initialDefaults.plist in Resources */,
 				E13F83051BB72BA50008025D /* Assets.xcassets in Resources */,
 				E1CC38B61BBB849400236052 /* 15.aiff in Resources */,
 				E13F83031BB72BA50008025D /* Main.storyboard in Resources */,

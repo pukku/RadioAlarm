@@ -17,22 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
         do {
             try AVAudioSession.sharedInstance().setActive(true);
         }
         catch {}
-        
+
         // set up the default settings
-        NSUserDefaults.standardUserDefaults().registerDefaults([
-            "stations" : [
-                "Classical New England" : "http://audio.wgbh.org/otherWaysToListen/classicalNewEngland.m3u",
-                "WERS" : "http://www.wers.org/wers.pls",
-            ],
-            "settings" : [
-                "station" : "Classical New England",
-                "time" : "07:05",
-            ],
-        ]);
+        let path = NSBundle.mainBundle().pathForResource("initialDefaults", ofType: ".plist");
+        let dict = NSDictionary(contentsOfFile: path!);
+        NSUserDefaults.standardUserDefaults().registerDefaults(dict as! [String: AnyObject]);
         
         return true
     }
@@ -58,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        NSUserDefaults.standardUserDefaults().synchronize();
     }
 
 

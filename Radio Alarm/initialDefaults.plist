@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>stations</key>
+    <dict>
+        <key>Classical New England</key>
+        <string>http://audio.wgbh.org/otherWaysToListen/classicalNewEngland.m3u</string>
+        <key>WERS</key>
+        <string>http://www.wers.org/wers.pls</string>
+    </dict>
+	<key>settings</key>
+	<dict>
+        <key>station</key>
+        <string>Classical New England</string>
+		<key>time</key>
+		<string>7:05</string>
+	</dict>
+</dict>
+</plist>
