@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dict = NSDictionary(contentsOfFile: path!);
         NSUserDefaults.standardUserDefaults().registerDefaults(dict as! [String: AnyObject]);
         
-        return true
+        return true;
     }
 
     
