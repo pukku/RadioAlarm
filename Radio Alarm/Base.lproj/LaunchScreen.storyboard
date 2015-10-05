@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +17,55 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dawn" translatesAutoresizingMaskIntoConstraints="NO" id="SAf-jr-VrZ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stations" translatesAutoresizingMaskIntoConstraints="NO" id="0LN-76-gCU">
+                                <rect key="frame" x="20" y="28" width="280" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="p1y-l5-eiM"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alarm" translatesAutoresizingMaskIntoConstraints="NO" id="Ku9-Eq-d2U">
+                                <rect key="frame" x="300" y="28" width="280" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Y76-RI-ElZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radio Alarm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLo-YV-PNo">
+                                <rect key="frame" x="20" y="156" width="560" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Pukku" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ab3-MI-fJD">
+                                <rect key="frame" x="20" y="207" width="560" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="SAf-jr-VrZ" secondAttribute="bottom" id="1BO-YC-g3L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qLo-YV-PNo" secondAttribute="trailing" id="1Re-UX-HLq"/>
+                            <constraint firstItem="SAf-jr-VrZ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="62H-Qk-IgF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SAf-jr-VrZ" secondAttribute="trailing" constant="-20" id="Bfx-ca-gkg"/>
+                            <constraint firstItem="Ku9-Eq-d2U" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="C0i-8o-j07"/>
+                            <constraint firstItem="0LN-76-gCU" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="Lxe-I2-cmh"/>
+                            <constraint firstItem="SAf-jr-VrZ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="Pf5-gh-y8V"/>
+                            <constraint firstItem="Ab3-MI-fJD" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="Z9G-A3-aRm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ab3-MI-fJD" secondAttribute="trailing" id="aBv-W6-G6S"/>
+                            <constraint firstItem="0LN-76-gCU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="cfj-OY-NKU"/>
+                            <constraint firstItem="qLo-YV-PNo" firstAttribute="top" secondItem="Ku9-Eq-d2U" secondAttribute="bottom" constant="8" id="mtS-ZF-MON"/>
+                            <constraint firstItem="Ku9-Eq-d2U" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="oHI-MR-S0K"/>
+                            <constraint firstItem="0LN-76-gCU" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="og1-LE-Dsm"/>
+                            <constraint firstItem="Ab3-MI-fJD" firstAttribute="top" secondItem="qLo-YV-PNo" secondAttribute="bottom" constant="8" id="s7k-Vz-aBw"/>
+                            <constraint firstItem="qLo-YV-PNo" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="sna-NV-4rg"/>
+                            <constraint firstItem="Ku9-Eq-d2U" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="tCq-9C-bg7"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +73,9 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alarm" width="26" height="24"/>
+        <image name="dawn" width="640" height="960"/>
+        <image name="stations" width="28" height="29"/>
+    </resources>
 </document>
