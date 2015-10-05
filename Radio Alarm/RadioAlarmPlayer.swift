@@ -41,7 +41,7 @@ class RAP {
         120: NamedAudioItem(name: "2 hours", url: NSBundle.mainBundle().URLForResource("120", withExtension: "aiff")),
     ];
     
-    let player = AudioPlayer();
+    var player = AudioPlayer();
 
     // MARK: player interaction
     

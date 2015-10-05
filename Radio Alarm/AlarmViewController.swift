@@ -58,6 +58,12 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
             stationLabel.text = "Error";
         }
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceBatteryLevelDidChangeNotification, object: nil);
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil);
+        super.viewDidDisappear(animated);
+    }
 
     // MARK: Actions
     
@@ -65,7 +71,6 @@ class AlarmViewController: UIViewController, AudioPlayerDelegate {
         RAP.si.stop();
         RAP.si.player.delegate = nil;
         
-        // @TODO: check to see if still observing anything and stop it
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceBatteryLevelDidChangeNotification, object: nil);
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "AVSystemController_SystemVolumeDidChangeNotification", object: nil);
     }
