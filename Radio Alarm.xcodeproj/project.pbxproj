@@ -24,6 +24,7 @@
 		E1CC38BD1BBC938600236052 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38BC1BBC938600236052 /* AlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E1CC38BF1BBCA8B400236052 /* KDEAudioPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		E1CC38C11BBCAA0600236052 /* RadioAlarmPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */; settings = {ASSET_TAGS = (); }; };
+		E1CC4E651BC34A4C008C0F8A /* alarm.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1CC4E641BC34A4C008C0F8A /* alarm.aiff */; settings = {ASSET_TAGS = (); }; };
 		E1D75F731BC208C7000B98F5 /* initialDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1D75F721BC208C7000B98F5 /* initialDefaults.plist */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		E1CC38BE1BBCA8B400236052 /* KDEAudioPlayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDEAudioPlayerExtension.swift; sourceTree = "<group>"; };
 		E1CC38C01BBCAA0600236052 /* RadioAlarmPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioAlarmPlayer.swift; sourceTree = "<group>"; };
 		E1CC38C21BBD5C7E00236052 /* mksilence.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = mksilence.pl; sourceTree = "<group>"; };
+		E1CC4E641BC34A4C008C0F8A /* alarm.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = alarm.aiff; sourceTree = "<group>"; };
 		E1D75F721BC208C7000B98F5 /* initialDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = initialDefaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 		E1CC38AD1BBB847700236052 /* silences */ = {
 			isa = PBXGroup;
 			children = (
+				E1CC4E641BC34A4C008C0F8A /* alarm.aiff */,
 				E1CC38C21BBD5C7E00236052 /* mksilence.pl */,
 				E1CC38AE1BBB849400236052 /* 1.aiff */,
 				E1CC38AF1BBB849400236052 /* 5.aiff */,
@@ -214,6 +217,7 @@
 				E1CC38B91BBB849400236052 /* 120.aiff in Resources */,
 				E1CC38B71BBB849400236052 /* 30.aiff in Resources */,
 				E1CC38B41BBB849400236052 /* 1.aiff in Resources */,
+				E1CC4E651BC34A4C008C0F8A /* alarm.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

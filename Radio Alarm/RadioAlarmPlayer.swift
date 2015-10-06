@@ -40,6 +40,7 @@ class RAP {
          60: NamedAudioItem(name: "1 hour", url: NSBundle.mainBundle().URLForResource("60", withExtension: "aiff")),
         120: NamedAudioItem(name: "2 hours", url: NSBundle.mainBundle().URLForResource("120", withExtension: "aiff")),
     ];
+    let backupAlarm = NamedAudioItem(name: "alarm", url: NSBundle.mainBundle().URLForResource("alarm", withExtension: "aiff"));
     
     var player = AudioPlayer();
 
@@ -75,7 +76,11 @@ class RAP {
             items.append(stations[station]);
         }
         else {
-            // @TODO: add an alarm sound to bundle, add it here as a fallback
+            // backup alarm sound; 20 iterations of noise then minute of silence.
+            for _ in 0..<20 {
+                items.append(backupAlarm!);
+                items.append(silences[1]!!);
+            }
         }
         
         player.stop();
